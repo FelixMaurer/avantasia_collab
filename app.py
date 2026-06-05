@@ -9,7 +9,7 @@ from pyvis.network import Network
 import streamlit.components.v1 as components
 
 APP_DIR = Path(__file__).parent
-DATA_PATH = APP_DIR / "data" / "collaborators.csv"
+DATA_PATH = APP_DIR / "collaborators.csv"
 
 st.set_page_config(page_title="Avantasia Collaboration Network", layout="wide")
 st.title("Avantasia collaboration network")
