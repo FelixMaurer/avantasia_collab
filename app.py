@@ -2,11 +2,16 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Dict, List, Tuple
+import tempfile
 
 import networkx as nx
 import pandas as pd
 import streamlit as st
-from streamlit_agraph import agraph, Config, Edge, Node
+import streamlit.components.v1 as components
+try:
+    from pyvis.network import Network
+except Exception:
+    Network = None
 
 APP_DIR = Path(__file__).resolve().parent
 NODES_PATH = APP_DIR / "nodes.csv"
@@ -118,52 +123,112 @@ def text_match_filter(nodes: pd.DataFrame, edges: pd.DataFrame, query: str) -> s
     return matched_nodes
 
 
-def make_agraph_items(
+def make_visible_tables(
     nodes: pd.DataFrame,
     edges: pd.DataFrame,
     visible_ids: set[str],
     min_weight: float,
-) -> Tuple[List[Node], List[Edge], pd.DataFrame, pd.DataFrame]:
+) -> Tuple[pd.DataFrame, pd.DataFrame]:
     ndf = nodes[nodes["id"].isin(visible_ids)].copy()
     edf = edges[
         edges["source"].isin(visible_ids)
         & edges["target"].isin(visible_ids)
         & (edges["weight"] >= min_weight)
     ].copy()
+    return ndf, edf
 
-    degree = pd.concat([edf["source"], edf["target"]]).value_counts().to_dict()
-    graph_nodes: List[Node] = []
-    for _, row in ndf.iterrows():
+
+def render_pyvis(
+    nodes: pd.DataFrame,
+    edges: pd.DataFrame,
+    physics: bool,
+    hierarchical: bool,
+    height: int = 780,
+) -> None:
+    if Network is None:
+        st.error("Missing dependency `pyvis`. Make sure requirements.txt contains `pyvis>=0.3.2`.")
+        st.stop()
+
+    net = Network(height=f"{height}px", width="100%", bgcolor="#ffffff", font_color="#222222", directed=False)
+    net.toggle_physics(physics)
+    if hierarchical:
+        net.set_options("""{
+          "layout": {"hierarchical": {"enabled": true, "sortMethod": "hubsize"}},
+          "physics": {"enabled": false},
+          "interaction": {"hover": true, "navigationButtons": true, "keyboard": true}
+        }""")
+    else:
+        net.set_options("""{
+          "physics": {
+            "enabled": true,
+            "barnesHut": {
+              "gravitationalConstant": -8000,
+              "centralGravity": 0.25,
+              "springLength": 160,
+              "springConstant": 0.035,
+              "damping": 0.25,
+              "avoidOverlap": 0.45
+            },
+            "stabilization": {"iterations": 250}
+          },
+          "interaction": {
+            "hover": true,
+            "tooltipDelay": 80,
+            "navigationButtons": true,
+            "keyboard": true,
+            "multiselect": true
+          }
+        }""")
+
+    degree = pd.concat([edges["source"], edges["target"]]).value_counts().to_dict() if not edges.empty else {}
+    for _, row in nodes.iterrows():
         node_type = row["type"] if row["type"] in TYPE_COLORS else "project"
-        size = 18 + min(34, degree.get(row["id"], 0) * 3)
+        size = 18 + min(34, int(degree.get(row["id"], 0)) * 3)
         if row["id"] == "avantasia":
             size = 55
-        title = f"{row['label']} ({row['type']})\n\n{row['description']}"
-        graph_nodes.append(
-            Node(
-                id=row["id"],
-                label=row["label"],
-                size=size,
-                color=TYPE_COLORS.get(node_type, "#CCCCCC"),
-                shape=TYPE_SHAPES.get(node_type, "dot"),
-                title=title,
-            )
+        title = (
+            f"<b>{row['label']}</b><br>"
+            f"Type: {row['type']}<br><br>"
+            f"{row['description']}<br><br>"
+            f"Aliases: {row['aliases']}<br>"
+            f"Note: {row['source_note']}"
+        )
+        net.add_node(
+            row["id"],
+            label=row["label"],
+            title=title,
+            color=TYPE_COLORS.get(node_type, "#CCCCCC"),
+            shape=TYPE_SHAPES.get(node_type, "dot"),
+            size=size,
+            borderWidth=3 if row["id"] == "avantasia" else 1,
         )
 
-    graph_edges: List[Edge] = []
-    for idx, row in edf.iterrows():
-        title = f"{row['relation']}\n\n{row['description']}"
-        graph_edges.append(
-            Edge(
-                source=row["source"],
-                target=row["target"],
-                label=row["relation"],
-                width=max(1, min(8, float(row["weight"]) / 1.5)),
-                title=title,
-            )
+    for _, row in edges.iterrows():
+        title = f"<b>{row['relation']}</b><br><br>{row['description']}"
+        net.add_edge(
+            row["source"],
+            row["target"],
+            title=title,
+            label=row["relation"],
+            value=max(1, float(row["weight"])),
+            width=max(1, min(8, float(row["weight"]) / 1.5)),
+            smooth={"type": "dynamic"},
         )
-    return graph_nodes, graph_edges, ndf, edf
 
+    with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8") as f:
+        net.save_graph(f.name)
+        html = Path(f.name).read_text(encoding="utf-8")
+
+    html = html.replace(
+        "</body>",
+        """
+        <div style="position:fixed;left:12px;bottom:12px;background:rgba(255,255,255,.92);border:1px solid #ddd;border-radius:8px;padding:8px 10px;font-family:Arial;font-size:12px;max-width:430px;z-index:9999;">
+          Click/drag nodes in the map. Hover over nodes or edges for descriptions. Use the detail dropdowns beside the graph for full node and relationship text.
+        </div>
+        </body>
+        """,
+    )
+    components.html(html, height=height + 30, scrolling=False)
 
 def node_details(node_id: str, nodes: pd.DataFrame, edges: pd.DataFrame) -> None:
     row = nodes[nodes["id"] == node_id]
@@ -249,7 +314,7 @@ query_ids = text_match_filter(nodes_df, edges_df, query)
 type_ids = set(nodes_df[nodes_df["type"].isin(selected_types)]["id"])
 visible = focus_ids & query_ids & type_ids
 
-agraph_nodes, agraph_edges, visible_nodes, visible_edges = make_agraph_items(
+visible_nodes, visible_edges = make_visible_tables(
     nodes_df, edges_df, visible, min_weight
 )
 
@@ -257,25 +322,12 @@ left, right = st.columns([2.1, 1], gap="large")
 
 with left:
     st.write(f"Showing **{len(visible_nodes)}** nodes and **{len(visible_edges)}** relationships.")
-    config = Config(
-        width="100%",
-        height=780,
-        directed=False,
-        physics=physics,
-        hierarchical=hierarchical,
-        nodeHighlightBehavior=True,
-        highlightColor="#F7A7A6",
-        collapsible=False,
-        linkHighlightBehavior=True,
-        maxZoom=4,
-        minZoom=0.1,
-    )
-    selected = agraph(nodes=agraph_nodes, edges=agraph_edges, config=config)
+    render_pyvis(visible_nodes, visible_edges, physics=physics, hierarchical=hierarchical, height=780)
 
 with right:
     st.header("Details")
-    st.caption("Click a node in the graph. If Streamlit Cloud/browser selection is flaky, use the dropdowns below.")
-    selected_node = selected if isinstance(selected, str) and selected in set(nodes_df["id"]) else "avantasia"
+    st.caption("Hover/click in the graph for quick tooltips; use these selectors for stable full descriptions on Streamlit Cloud.")
+    selected_node = "avantasia"
     visible_node_labels = {
         f"{r.label} [{r.type}]": r.id for r in visible_nodes.sort_values("label").itertuples()
     }

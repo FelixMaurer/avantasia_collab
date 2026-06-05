@@ -1,36 +1,46 @@
 # Avantasia Collaboration Network
 
-Interactive Streamlit/PyVis spring network of Avantasia collaborators and their linked bands.
+A flat, GitHub-ready Streamlit app for exploring the Avantasia collaboration universe.
+
+No folders are required. Keep all files in the repository root:
+
+```text
+app.py
+nodes.csv
+edges.csv
+requirements.txt
+README.md
+```
 
 ## Run locally
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Deploy on Streamlit Community Cloud
+## Deploy on Streamlit Cloud
 
-1. Create a GitHub repository.
-2. Add `app.py`, `requirements.txt`, and the `data/` folder.
-3. In Streamlit Cloud, choose the repo and set the main file to `app.py`.
+1. Upload these files to the root of a GitHub repository.
+2. In Streamlit Cloud, choose `app.py` as the entry point.
+3. Do not put `nodes.csv` or `edges.csv` into a `data/` folder unless you also change the paths in `app.py`.
+
+## Editing the graph
+
+- Add artists, bands and projects to `nodes.csv`.
+- Add relationships to `edges.csv`.
+- The app validates missing IDs and reports broken edges in the sidebar.
 
 ## Data model
 
-`data/collaborators.csv` has:
+`nodes.csv` columns:
 
-- `singer`: collaborator / musician name
-- `bands`: semicolon-separated band affiliations
-- `role`: guest vocalist, guitar, drums, core musician, etc.
-- `notes`: short context
+```csv
+id,label,type,description,aliases,source_note
+```
 
-The graph creates:
+`edges.csv` columns:
 
-- Avantasia → collaborator edges
-- collaborator → band edges
-- optional band ↔ band edges where one person links both
-- optional collaborator ↔ collaborator edges where both share a band
-
-This is a curated seed dataset. It is intentionally easy to expand/correct by editing the CSV.
+```csv
+source,target,relation,description,weight
+```
