@@ -3,6 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Dict, List, Tuple
 import tempfile
+import html
+import json
 
 import networkx as nx
 import pandas as pd
@@ -34,6 +36,92 @@ st.set_page_config(
     layout="wide",
 )
 
+st.markdown(
+    """
+    <style>
+    .detail-card {
+        border: 1px solid rgba(49, 51, 63, 0.18);
+        border-radius: 12px;
+        padding: 0.85rem 0.95rem;
+        margin: 0.55rem 0;
+        background: rgba(250,250,250,0.85);
+        overflow-wrap: anywhere;
+        word-break: normal;
+        line-height: 1.42;
+    }
+    .detail-card h3 { margin: 0 0 0.25rem 0; font-size: 1.08rem; }
+    .detail-card p { margin: 0.45rem 0 0 0; white-space: normal; }
+    .detail-subtitle { color: #666; font-size: 0.86rem; margin-bottom: 0.35rem; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+
+
+def clean_text(value: object) -> str:
+    """Return readable text: remove accidental HTML tags and unescape entities."""
+    text = html.unescape(str(value or "")).replace("<br>", "\n").replace("<br/>", "\n").replace("<br />", "\n")
+    # Strip a small set of formatting tags if they were pasted into the CSV.
+    for tag in ["b", "strong", "i", "em", "p", "div", "span", "ul", "ol", "li"]:
+        text = text.replace(f"<{tag}>", "").replace(f"</{tag}>", "")
+    return " ".join(text.split()) if "\n" not in text else "\n".join(" ".join(line.split()) for line in text.splitlines())
+
+
+def html_block(title: str, rows: List[Tuple[str, object]]) -> str:
+    body = [f"<div class='tip-title'>{html.escape(clean_text(title))}</div>"]
+    for label, value in rows:
+        text = clean_text(value)
+        if text:
+            body.append(
+                "<div class='tip-row'>"
+                f"<span class='tip-label'>{html.escape(label)}:</span> "
+                f"<span>{html.escape(text)}</span>"
+                "</div>"
+            )
+    return "<div class='graph-tip'>" + "".join(body) + "</div>"
+
+
+def detail_card(title: str, subtitle: str, description: str, extra: List[Tuple[str, object]] | None = None) -> None:
+    rows = ""
+    for label, value in extra or []:
+        text = clean_text(value)
+        if text:
+            rows += f"<p><b>{html.escape(label)}:</b> {html.escape(text)}</p>"
+    st.markdown(
+        f"""
+        <div class="detail-card">
+            <h3>{html.escape(clean_text(title))}</h3>
+            <div class="detail-subtitle">{html.escape(clean_text(subtitle))}</div>
+            <p>{html.escape(clean_text(description))}</p>
+            {rows}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def relation_cards(rels: pd.DataFrame, nodes: pd.DataFrame, node_id: str | None = None, max_cards: int = 40) -> None:
+    label_by_id = dict(zip(nodes["id"], nodes["label"]))
+    if rels.empty:
+        st.write("No relationships in the current dataset.")
+        return
+    for _, row in rels.head(max_cards).iterrows():
+        source = label_by_id.get(row["source"], row["source"])
+        target = label_by_id.get(row["target"], row["target"])
+        if node_id:
+            other = row["target"] if row["source"] == node_id else row["source"]
+            title = label_by_id.get(other, other)
+        else:
+            title = f"{source} ↔ {target}"
+        detail_card(
+            title=title,
+            subtitle=f"Relation: {row['relation']} · Weight: {row['weight']}",
+            description=row["description"],
+        )
+    if len(rels) > max_cards:
+        st.caption(f"Showing first {max_cards} of {len(rels)} relationships.")
 
 def require_file(path: Path, columns: List[str]) -> None:
     if not path.exists():
@@ -186,12 +274,14 @@ def render_pyvis(
         size = 18 + min(34, int(degree.get(row["id"], 0)) * 3)
         if row["id"] == "avantasia":
             size = 55
-        title = (
-            f"<b>{row['label']}</b><br>"
-            f"Type: {row['type']}<br><br>"
-            f"{row['description']}<br><br>"
-            f"Aliases: {row['aliases']}<br>"
-            f"Note: {row['source_note']}"
+        title = html_block(
+            row["label"],
+            [
+                ("Type", row["type"]),
+                ("Description", row["description"]),
+                ("Aliases", row["aliases"]),
+                ("Note", row["source_note"]),
+            ],
         )
         net.add_node(
             row["id"],
@@ -204,7 +294,12 @@ def render_pyvis(
         )
 
     for _, row in edges.iterrows():
-        title = f"<b>{row['relation']}</b><br><br>{row['description']}"
+        source_label = nodes.loc[nodes["id"] == row["source"], "label"].iloc[0] if row["source"] in set(nodes["id"]) else row["source"]
+        target_label = nodes.loc[nodes["id"] == row["target"], "label"].iloc[0] if row["target"] in set(nodes["id"]) else row["target"]
+        title = html_block(
+            f"{source_label} ↔ {target_label}",
+            [("Relation", row["relation"]), ("Description", row["description"])],
+        )
         net.add_edge(
             row["source"],
             row["target"],
@@ -220,11 +315,78 @@ def render_pyvis(
         html = Path(f.name).read_text(encoding="utf-8")
 
     html = html.replace(
+        "</head>",
+        """
+        <style>
+          .vis-tooltip {
+            max-width: 460px !important;
+            white-space: normal !important;
+            overflow-wrap: anywhere !important;
+            word-break: normal !important;
+            line-height: 1.35 !important;
+            font-family: Arial, sans-serif !important;
+            font-size: 13px !important;
+            padding: 10px 12px !important;
+            border-radius: 8px !important;
+            box-shadow: 0 4px 18px rgba(0,0,0,.14) !important;
+          }
+          .graph-tip { max-width: 440px; white-space: normal; overflow-wrap: anywhere; }
+          .tip-title { font-weight: 700; font-size: 15px; margin-bottom: 7px; }
+          .tip-row { margin-top: 5px; }
+          .tip-label { font-weight: 700; }
+          #selection-panel {
+            position: fixed; right: 12px; bottom: 12px; width: 390px; max-height: 270px;
+            overflow-y: auto; background: rgba(255,255,255,.96); border: 1px solid #ddd;
+            border-radius: 10px; padding: 10px 12px; font-family: Arial, sans-serif;
+            font-size: 13px; line-height: 1.38; z-index: 9999; box-shadow: 0 4px 18px rgba(0,0,0,.12);
+            overflow-wrap: anywhere;
+          }
+          #selection-panel h3 { margin: 0 0 4px 0; font-size: 15px; }
+          #selection-panel p { margin: 6px 0; }
+          #selection-panel .muted { color: #666; font-size: 12px; }
+        </style>
+        </head>
+        """,
+    )
+    html = html.replace(
         "</body>",
         """
-        <div style="position:fixed;left:12px;bottom:12px;background:rgba(255,255,255,.92);border:1px solid #ddd;border-radius:8px;padding:8px 10px;font-family:Arial;font-size:12px;max-width:430px;z-index:9999;">
-          Click/drag nodes in the map. Hover over nodes or edges for descriptions. Use the detail dropdowns beside the graph for full node and relationship text.
+        <div style="position:fixed;left:12px;bottom:12px;background:rgba(255,255,255,.92);border:1px solid #ddd;border-radius:8px;padding:8px 10px;font-family:Arial;font-size:12px;max-width:430px;z-index:9998;">
+          Hover for wrapped tooltips. Use the detail selectors beside the graph for stable full text.
         </div>
+        <div id="selection-panel">
+          <h3>Selection</h3>
+          <p class="muted">Click or hover a node/edge. Long descriptions are also shown in the Streamlit detail panel.</p>
+        </div>
+        <script>
+          function readableTitle(raw) {
+            if (!raw) return "";
+            const div = document.createElement('div');
+            div.innerHTML = raw;
+            return div.innerText || div.textContent || "";
+          }
+          function writePanel(kind, id) {
+            const panel = document.getElementById('selection-panel');
+            if (!panel || typeof network === 'undefined') return;
+            let item = null;
+            if (kind === 'node') item = nodes.get(id);
+            if (kind === 'edge') item = edges.get(id);
+            if (!item) return;
+            const title = kind === 'node' ? (item.label || id) : (item.label || 'Relationship');
+            const text = readableTitle(item.title || '');
+            panel.innerHTML = '<h3>' + title + '</h3>' +
+              '<p class="muted">' + kind + '</p>' +
+              '<p>' + text.replace(/\n/g, '<br>') + '</p>';
+          }
+          if (typeof network !== 'undefined') {
+            network.on('click', function(params) {
+              if (params.nodes && params.nodes.length) writePanel('node', params.nodes[0]);
+              else if (params.edges && params.edges.length) writePanel('edge', params.edges[0]);
+            });
+            network.on('hoverNode', function(params) { writePanel('node', params.node); });
+            network.on('hoverEdge', function(params) { writePanel('edge', params.edge); });
+          }
+        </script>
         </body>
         """,
     )
@@ -236,28 +398,21 @@ def node_details(node_id: str, nodes: pd.DataFrame, edges: pd.DataFrame) -> None
         st.info("Click a node in the graph, or choose one from the dropdown below.")
         return
     r = row.iloc[0]
-    st.subheader(r["label"])
-    st.caption(f"Type: {r['type']} · ID: {r['id']}")
-    st.write(r["description"])
-    if r["aliases"]:
-        st.write(f"**Aliases:** {r['aliases']}")
-    if r["source_note"]:
-        st.write(f"**Note:** {r['source_note']}")
+    detail_card(
+        title=r["label"],
+        subtitle=f"Type: {r['type']} · ID: {r['id']}",
+        description=r["description"],
+        extra=[("Aliases", r["aliases"]), ("Note", r["source_note"])],
+    )
 
     rels = edges[(edges["source"] == node_id) | (edges["target"] == node_id)].copy()
-    if rels.empty:
-        st.write("No relationships in the current dataset.")
-        return
-    label_by_id = dict(zip(nodes["id"], nodes["label"]))
-    rels["other"] = rels.apply(
-        lambda x: x["target"] if x["source"] == node_id else x["source"], axis=1
+    st.markdown("**Relationships**")
+    relation_cards(
+        rels.sort_values(["weight", "relation"], ascending=[False, True]),
+        nodes,
+        node_id=node_id,
+        max_cards=30,
     )
-    rels["connected_to"] = rels["other"].map(label_by_id).fillna(rels["other"])
-    show = rels[["connected_to", "relation", "description", "weight"]].sort_values(
-        ["weight", "connected_to"], ascending=[False, True]
-    )
-    st.dataframe(show, use_container_width=True, hide_index=True)
-
 
 def edge_details(edge_key: str, edges: pd.DataFrame, nodes: pd.DataFrame) -> None:
     if not edge_key:
@@ -267,11 +422,11 @@ def edge_details(edge_key: str, edges: pd.DataFrame, nodes: pd.DataFrame) -> Non
         return
     row = edges.loc[idx]
     label_by_id = dict(zip(nodes["id"], nodes["label"]))
-    st.subheader("Relationship")
-    st.write(f"**{label_by_id.get(row['source'], row['source'])} → {label_by_id.get(row['target'], row['target'])}**")
-    st.write(f"**Relation:** {row['relation']}")
-    st.write(row["description"])
-    st.caption(f"Weight: {row['weight']}")
+    detail_card(
+        title=f"{label_by_id.get(row['source'], row['source'])} ↔ {label_by_id.get(row['target'], row['target'])}",
+        subtitle=f"Relation: {row['relation']} · Weight: {row['weight']}",
+        description=row["description"],
+    )
 
 
 nodes_df, edges_df = load_tables()
