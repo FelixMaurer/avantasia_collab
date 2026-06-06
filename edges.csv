@@ -1,130 +1,85 @@
-source,target,relation,description,weight
-avantasia,tobias_sammet,founder,"Tobias Sammet created Avantasia and is the central songwriter/vocalist.",10
-tobias_sammet,edguy,frontman,"Tobias Sammet is the vocalist/frontman of Edguy.",7
-avantasia,jorn_lande,guest vocalist,"Recurring Avantasia guest vocalist; especially important in the post-Metal Opera era.",9
-jorn_lande,masterplan,member/frontman,"Jørn Lande is strongly associated with Masterplan as a lead vocalist.",8
-jorn_lande,ark,member/frontman,"Jørn fronted Ark, one of his notable progressive-metal affiliations.",6
-jorn_lande,beyond_twilight,member/frontman,"Jørn was involved with Beyond Twilight.",5
-jorn_lande,vagabond,member/frontman,"Early hard-rock affiliation in Jørn's career.",4
-jorn_lande,the_snakes,member/frontman,"Jørn was associated with The Snakes.",4
-jorn_lande,jorn_solo,solo project,"Jorn/JORN is Jørn Lande's solo band/project.",8
-jorn_lande,allen_lande,collaboration,"Jørn is one half of the Allen/Lande studio collaboration.",8
-russell_allen,allen_lande,collaboration,"Russell Allen is the other lead vocalist in Allen/Lande.",8
-russell_allen,symphony_x,frontman,"Russell Allen is best known as vocalist of Symphony X.",8
-allen_lande,magnus_karlsson,songwriting/production,"Magnus Karlsson is a key creative link in the Allen/Lande project.",6
-avantasia,russell_allen,guest vocalist,"Russell Allen appears in the Avantasia guest-vocalist universe.",5
-magnus_karlsson,primal_fear,guitarist/songwriter,"Magnus Karlsson has been associated with Primal Fear.",5
-ralf_scheepers,primal_fear,frontman,"Ralf Scheepers is vocalist of Primal Fear.",8
-avantasia,ralf_scheepers,guest vocalist,"Ralf Scheepers appears as an Avantasia guest vocalist.",5
-ralf_scheepers,gamma_ray,former vocalist,"Ralf Scheepers was an early Gamma Ray vocalist.",6
-kai_hansen,gamma_ray,founder,"Kai Hansen founded Gamma Ray.",8
-kai_hansen,helloween,founder/member,"Kai Hansen was a founding Helloween member.",8
-avantasia,kai_hansen,guest vocalist/guitarist,"Kai Hansen is an early Avantasia guest.",7
-michael_kiske,helloween,vocalist,"Michael Kiske is a major Helloween vocalist.",9
-michael_kiske,unisonic,vocalist,"Michael Kiske sang in Unisonic.",7
-kai_hansen,unisonic,guitarist/vocalist,"Kai Hansen joined Kiske in Unisonic.",7
-michael_kiske,place_vendome,vocalist,"Michael Kiske is the lead voice of Place Vendome.",5
-michael_kiske,kiske_somerville,collaboration,"Kiske/Somerville pairs Michael Kiske and Amanda Somerville.",6
-amanda_somerville,kiske_somerville,collaboration,"Amanda Somerville is the second named vocalist in Kiske/Somerville.",6
-avantasia,michael_kiske,guest vocalist,"Michael Kiske is one of Avantasia's most defining and recurring guest singers.",10
-avantasia,amanda_somerville,vocals/vocal production,"Amanda Somerville has been a frequent Avantasia live/backing vocalist and collaborator.",7
-avantasia,sascha_paeth,guitar/producer,"Sascha Paeth is a core Avantasia guitarist/producer collaborator.",9
-avantasia,miro,keyboards/orchestration,"Miro is part of the Avantasia production/keyboard/orchestral core.",8
-avantasia,oliver_hartmann,vocalist/guitarist,"Oliver Hartmann appears as vocalist and live guitarist in Avantasia.",8
-oliver_hartmann,at_vance,vocalist,"Oliver Hartmann is associated with At Vance.",6
-oliver_hartmann,hartmann_band,solo project,"Hartmann is Oliver Hartmann's solo band/project.",6
-avantasia,bob_catley,guest vocalist,"Bob Catley is a recurring Avantasia guest and live vocalist.",9
-bob_catley,magnum,frontman,"Bob Catley fronts Magnum.",8
-bob_catley,hard_rain,related project,"Hard Rain is connected to the Magnum/Bob Catley orbit.",4
-avantasia,ronnie_atkins,guest vocalist,"Ronnie Atkins is a recurring Avantasia guest and live vocalist.",9
-ronnie_atkins,pretty_maids,frontman,"Ronnie Atkins is the singer of Pretty Maids.",8
-ronnie_atkins,nordic_union,vocalist,"Ronnie Atkins is vocalist in Nordic Union.",6
-avantasia,eric_martin,guest vocalist,"Eric Martin is a recurring Avantasia guest vocalist.",8
-eric_martin,mr_big,frontman,"Eric Martin fronts Mr. Big.",8
-avantasia,geoff_tate,guest vocalist,"Geoff Tate is a recurring Avantasia guest vocalist.",8
-geoff_tate,queensryche,classic vocalist,"Geoff Tate is the classic-era Queensrÿche vocalist.",8
-geoff_tate,operation_mindcrime,solo/project,"Operation: Mindcrime is a Geoff Tate project.",5
-avantasia,roy_khan,guest vocalist,"Roy Khan appears in Avantasia's Here Be Dragons era.",6
-roy_khan,kamelot,former vocalist,"Roy Khan was a major Kamelot vocalist.",8
-roy_khan,conception,frontman,"Roy Khan fronts Conception.",7
-avantasia,tommy_karevik,guest vocalist,"Tommy Karevik is an Avantasia guest in the Here Be Dragons era.",6
-tommy_karevik,kamelot,vocalist,"Tommy Karevik is a Kamelot vocalist.",8
-tommy_karevik,seventh_wonder,vocalist,"Tommy Karevik is associated with Seventh Wonder.",7
-avantasia,kenny_leckremo,guest vocalist,"Kenny Leckremo is an Avantasia guest/live singer in the Here Be Dragons era.",6
-kenny_leckremo,heat,vocalist,"Kenny Leckremo is associated with H.E.A.T.",7
-avantasia,adrienne_cowan,guest vocalist,"Adrienne Cowan is an Avantasia guest/live singer in the Here Be Dragons era.",6
-adrienne_cowan,seven_spires,frontwoman,"Adrienne Cowan fronts Seven Spires.",8
-avantasia,herbie_langhans,vocals/backing vocals,"Herbie Langhans is an Avantasia vocalist/backing vocalist/live collaborator.",7
-herbie_langhans,firewind,vocalist,"Herbie Langhans is associated with Firewind.",5
-herbie_langhans,sinbreed,vocalist,"Herbie Langhans is associated with Sinbreed.",5
-avantasia,floor_jansen,guest vocalist,"Floor Jansen appears as an Avantasia guest vocalist.",6
-floor_jansen,nightwish,vocalist,"Floor Jansen fronts Nightwish in the modern era.",8
-floor_jansen,after_forever,frontwoman,"Floor Jansen first rose widely through After Forever.",7
-floor_jansen,revamp,frontwoman,"Floor Jansen founded/fronted ReVamp.",6
-avantasia,hansi_kursch,guest vocalist,"Hansi Kürsch appears as an Avantasia guest vocalist.",6
-hansi_kursch,blind_guardian,frontman,"Hansi Kürsch fronts Blind Guardian.",8
-hansi_kursch,demons_wizards,vocalist,"Hansi Kürsch sang in Demons & Wizards.",6
-avantasia,sharon_den_adel,guest vocalist,"Sharon den Adel appears as an Avantasia guest vocalist.",5
-sharon_den_adel,within_temptation,frontwoman,"Sharon den Adel fronts Within Temptation.",8
-avantasia,marko_hietala,guest vocalist,"Marko Hietala appears as an Avantasia guest vocalist.",5
-marko_hietala,nightwish,vocalist/bassist,"Marko Hietala was a vocalist/bassist in Nightwish.",7
-marko_hietala,tarot,vocalist/bassist,"Marko Hietala is associated with Tarot.",7
-floor_jansen,nightwish_marko,shared orbit,"Bridge: Floor Jansen and Marko Hietala share the Nightwish orbit.",4
-marko_hietala,nightwish_marko,shared orbit,"Bridge: Marko Hietala and Floor Jansen share the Nightwish orbit.",4
-avantasia,andre_matos,guest vocalist,"Andre Matos was an early Avantasia guest vocalist.",7
-andre_matos,angra,former vocalist,"Andre Matos was a key Angra vocalist.",8
-andre_matos,shaman,frontman,"Andre Matos fronted Shaman/Shaaman.",7
-andre_matos,viper,vocalist,"Andre Matos was associated with Viper.",6
-avantasia,rob_rock,guest vocalist,"Rob Rock was an early Avantasia guest vocalist.",6
-rob_rock,impellitteri,vocalist,"Rob Rock is strongly associated with Impellitteri.",7
-rob_rock,axel_rudi_pell,vocalist link,"Rob Rock has links to the Axel Rudi Pell melodic-metal orbit.",3
-avantasia,david_defeis,guest vocalist,"David DeFeis was an early Avantasia guest vocalist.",6
-david_defeis,virgin_steele,frontman,"David DeFeis fronts Virgin Steele.",8
-avantasia,alice_cooper,guest vocalist,"Alice Cooper appeared as a guest in Avantasia's rock/metal-opera universe.",5
-alice_cooper,alice_cooper_band,frontman,"Alice Cooper is linked to the Alice Cooper band/brand.",8
-avantasia,klaus_meine,guest vocalist,"Klaus Meine appears as an Avantasia guest vocalist.",5
-klaus_meine,scorpions,frontman,"Klaus Meine fronts Scorpions.",9
-avantasia,rudolf_schenker,guest guitarist,"Rudolf Schenker appears as an Avantasia guest musician.",4
-rudolf_schenker,scorpions,founder/guitarist,"Rudolf Schenker founded/plays guitar in Scorpions.",9
-avantasia,dee_snider,guest vocalist,"Dee Snider appears as an Avantasia guest vocalist.",5
-dee_snider,twisted_sister,frontman,"Dee Snider fronts Twisted Sister.",9
-avantasia,jon_oliva,guest vocalist,"Jon Oliva appears as an Avantasia guest vocalist.",5
-jon_oliva,savatage,founder/vocalist,"Jon Oliva is central to Savatage.",9
-jon_oliva,trans_siberian_orchestra,composer/related,"Jon Oliva is linked to Trans-Siberian Orchestra through the Savatage creative orbit.",6
-savatage,trans_siberian_orchestra,shared creative lineage,"Trans-Siberian Orchestra grew from the Savatage creative circle.",6
-avantasia,biff_byford,guest vocalist,"Biff Byford appears as an Avantasia guest vocalist.",5
-biff_byford,saxon,frontman,"Biff Byford fronts Saxon.",9
-avantasia,joe_lynn_turner,guest vocalist,"Joe Lynn Turner appears as an Avantasia guest vocalist.",5
-joe_lynn_turner,rainbow,vocalist,"Joe Lynn Turner sang in Rainbow.",7
-joe_lynn_turner,deep_purple,vocalist,"Joe Lynn Turner sang in Deep Purple for one era.",6
-joe_lynn_turner,yngwie_malmsteen,vocalist,"Joe Lynn Turner collaborated with Yngwie Malmsteen.",5
-avantasia,tim_ripper_owens,guest vocalist,"Tim 'Ripper' Owens appears as an Avantasia guest vocalist.",5
-tim_ripper_owens,judas_priest,former vocalist,"Tim 'Ripper' Owens was vocalist of Judas Priest in the late 1990s/early 2000s.",7
-tim_ripper_owens,iced_earth,former vocalist,"Tim 'Ripper' Owens was associated with Iced Earth.",6
-avantasia,bruce_kulick,guest guitarist,"Bruce Kulick appears as an Avantasia guest guitarist.",5
-bruce_kulick,kiss,guitarist,"Bruce Kulick played guitar in KISS.",8
-bruce_kulick,grand_funk,guitarist,"Bruce Kulick has been associated with Grand Funk Railroad.",5
-avantasia,eric_singer,guest drummer,"Eric Singer appears as an Avantasia guest drummer.",5
-eric_singer,kiss,drummer,"Eric Singer is associated with KISS.",8
-eric_singer,alice_cooper,drummer,"Eric Singer has played with Alice Cooper.",5
-avantasia,timo_tolkki,guest guitarist,"Timo Tolkki appears in the Avantasia guest-musician universe.",5
-timo_tolkki,stratovarius,guitarist/composer,"Timo Tolkki is strongly associated with Stratovarius.",8
-avantasia,jens_johansson,guest keyboardist,"Jens Johansson appears in the Avantasia guest-musician universe.",5
-jens_johansson,stratovarius,keyboardist,"Jens Johansson plays keyboards in Stratovarius.",8
-jens_johansson,yngwie_malmsteen,keyboardist,"Jens Johansson has worked with Yngwie Malmsteen.",6
-avantasia,arjen_lucassen,guest guitarist,"Arjen Lucassen appears as an Avantasia guest musician.",5
-arjen_lucassen,ayreon,creator,"Arjen Lucassen created Ayreon.",10
-arjen_lucassen,star_one,creator,"Arjen Lucassen created Star One.",7
-jorn_lande,ayreon,guest vocalist,"Jørn Lande has also sung in Ayreon, making a metal-opera bridge from Avantasia to Ayreon.",6
-floor_jansen,ayreon,guest vocalist,"Floor Jansen is part of the Ayreon guest-vocalist orbit.",5
-hansi_kursch,ayreon,guest vocalist,"Hansi Kürsch is part of the Ayreon guest-vocalist orbit.",5
-avantasia,mille_petrozza,guest vocalist,"Mille Petrozza appears as an Avantasia guest vocalist.",5
-mille_petrozza,kreator,frontman,"Mille Petrozza fronts Kreator.",9
-avantasia,candice_night,guest vocalist,"Candice Night appears as an Avantasia guest vocalist.",5
-candice_night,blackmores_night,frontwoman,"Candice Night fronts Blackmore's Night with Ritchie Blackmore.",8
-blackmores_night,rainbow,ritchie blackmore bridge,"Bridge through Ritchie Blackmore's musical orbit: Blackmore's Night and Rainbow.",4
-helloween,masterplan,member lineage,"Masterplan connects to Helloween through former Helloween guitarist Roland Grapow and the German power-metal scene.",5
-helloween,gamma_ray,kai hansen bridge,"Helloween and Gamma Ray are linked through Kai Hansen.",8
-helloween,stratovarius,power metal scene,"Major European power-metal bands frequently linked in listener and festival scenes.",2
-kamelot,seven_spires,symphonic metal scene,"Kamelot and Seven Spires share the modern symphonic-metal scene and Avantasia 2025 guest orbit.",2
-kamelot,nightwish,symphonic metal scene,"Kamelot and Nightwish are major symphonic/power-metal reference nodes in the Avantasia-adjacent universe.",2
+source,target,relation,description
+avantasia,tobias_sammet,founder,Tobias Sammet founded and leads Avantasia.
+tobias_sammet,edguy,vocalist,Tobias Sammet is the singer and main songwriter of Edguy.
+avantasia,jorn_lande,guest vocalist,Jørn Lande is one of the recurring Avantasia guest vocalists.
+jorn_lande,masterplan,vocalist,Jørn Lande was a major vocalist in Masterplan.
+jorn_lande,jorn_band,solo project,Jorn is Jørn Lande's solo band and recording project.
+jorn_lande,ark,vocalist,Jørn Lande sang with Ark.
+jorn_lande,vagabond,vocalist,Jørn Lande was associated with Vagabond.
+jorn_lande,beyond_twilight,vocalist,Jørn Lande appeared with Beyond Twilight.
+jorn_lande,allen_lande,duo project,Allen/Lande pairs Jørn Lande with Russell Allen.
+russell_allen,allen_lande,duo project,Russell Allen is the other lead vocalist of Allen/Lande.
+russell_allen,symphony_x,vocalist,Russell Allen fronts Symphony X.
+allen_lande,magnus_karlsson,songwriter/guitarist,Magnus Karlsson wrote and played on Allen/Lande material.
+magnus_karlsson,primal_fear,guitarist,Magnus Karlsson is linked to Primal Fear as guitarist.
+magnus_karlsson,starbreaker,guitarist/songwriter,Magnus Karlsson is a core member of Starbreaker.
+avantasia,michael_kiske,guest vocalist,Michael Kiske is a key Avantasia guest vocalist.
+michael_kiske,helloween,vocalist,Michael Kiske became famous as vocalist of Helloween.
+michael_kiske,unisonic,vocalist,Michael Kiske sang in Unisonic.
+michael_kiske,place_vendome,vocalist,Michael Kiske is the vocalist of Place Vendome.
+michael_kiske,kiske_somerville,duo project,Michael Kiske collaborated with Amanda Somerville in Kiske/Somerville.
+kai_hansen,helloween,guitarist/vocalist,Kai Hansen was a founding Helloween member.
+kai_hansen,gamma_ray,founder,Kai Hansen founded Gamma Ray.
+kai_hansen,unisonic,guitarist,Kai Hansen played with Michael Kiske in Unisonic.
+avantasia,kai_hansen,guest vocalist/guitarist,Kai Hansen appeared as an Avantasia guest.
+avantasia,bob_catley,guest vocalist,Bob Catley is a recurring Avantasia guest vocalist.
+bob_catley,magnum,vocalist,Bob Catley fronts Magnum.
+bob_catley,hard_rain,vocalist,Bob Catley is associated with Hard Rain.
+avantasia,eric_martin,guest vocalist,Eric Martin has appeared as an Avantasia guest.
+eric_martin,mr_big,vocalist,Eric Martin fronts Mr. Big.
+avantasia,geoff_tate,guest vocalist,Geoff Tate appeared as an Avantasia guest vocalist.
+geoff_tate,queensryche,vocalist,Geoff Tate is best known as former Queensrÿche vocalist.
+avantasia,ronnie_atkins,guest vocalist,Ronnie Atkins has appeared with Avantasia.
+ronnie_atkins,pretty_maids,vocalist,Ronnie Atkins fronts Pretty Maids.
+ronnie_atkins,nordic_union,vocalist,Ronnie Atkins sings in Nordic Union.
+nordic_union,erik_martensson,producer/songwriter,Erik Mårtensson is the other principal Nordic Union collaborator.
+erik_martensson,eclipse,vocalist/guitarist,Erik Mårtensson fronts Eclipse.
+erik_martensson,wet,vocalist/guitarist,Erik Mårtensson is part of W.E.T.
+jeff_scott_soto,wet,vocalist,Jeff Scott Soto sings in W.E.T.
+jeff_scott_soto,talisman,vocalist,Jeff Scott Soto fronted Talisman.
+jeff_scott_soto,sons_of_apollo,vocalist,Jeff Scott Soto sang in Sons of Apollo.
+avantasia,jeff_scott_soto,guest vocalist,Jeff Scott Soto appeared with Avantasia.
+avantasia,tommy_karevik,guest vocalist,Tommy Karevik is part of newer Avantasia guest activity.
+tommy_karevik,kamelot,vocalist,Tommy Karevik fronts Kamelot.
+tommy_karevik,seventh_wonder,vocalist,Tommy Karevik fronts Seventh Wonder.
+roy_khan,kamelot,former vocalist,Roy Khan was Kamelot's vocalist before Tommy Karevik.
+roy_khan,conception,vocalist,Roy Khan fronts Conception.
+avantasia,roy_khan,guest vocalist,Roy Khan appeared as an Avantasia guest.
+avantasia,adrienne_cowan,guest vocalist,Adrienne Cowan appears in newer Avantasia activity.
+adrienne_cowan,seven_spires,vocalist,Adrienne Cowan fronts Seven Spires.
+adrienne_cowan,sascha_paeth,collaboration,Adrienne Cowan has worked in Sascha Paeth related metal circles.
+avantasia,sascha_paeth,guitarist/producer,Sascha Paeth is a central Avantasia guitarist producer and collaborator.
+sascha_paeth,heavens_gate,guitarist,Sascha Paeth played guitar in Heavens Gate.
+sascha_paeth,masters_of_ceremony,leader,Sascha Paeth leads Masters of Ceremony.
+sascha_paeth,aina,producer/guitarist,Sascha Paeth contributed to the Aina metal opera project.
+avantasia,amanda_somerville,vocalist/vocal coach,Amanda Somerville contributed vocals and vocal work around Avantasia.
+amanda_somerville,trillium,vocalist,Amanda Somerville fronts Trillium.
+amanda_somerville,kiske_somerville,vocalist,Amanda Somerville collaborated with Michael Kiske in Kiske/Somerville.
+amanda_somerville,aina,vocalist,Amanda Somerville contributed to Aina.
+avantasia,floor_jansen,guest vocalist,Floor Jansen has appeared as an Avantasia guest vocalist.
+floor_jansen,nightwish,vocalist,Floor Jansen fronts Nightwish.
+floor_jansen,after_forever,vocalist,Floor Jansen fronted After Forever.
+floor_jansen,revamp,founder/vocalist,Floor Jansen founded and fronted ReVamp.
+avantasia,herbie_langhans,guest vocalist/bassist,Herbie Langhans has worked with Avantasia as guest musician and vocalist.
+herbie_langhans,firewind,vocalist,Herbie Langhans sang for Firewind.
+herbie_langhans,sinbreed,vocalist,Herbie Langhans sang in Sinbreed.
+herbie_langhans,radiant,vocalist,Herbie Langhans sings in Radiant.
+herbie_langhans,seventh_avenue,vocalist,Herbie Langhans sang in Seventh Avenue.
+avantasia,oliver_hartmann,guitarist/vocalist,Oliver Hartmann has been a live and studio collaborator with Avantasia.
+oliver_hartmann,at_vance,vocalist,Oliver Hartmann sang in At Vance.
+oliver_hartmann,hartmann,solo band,Hartmann is Oliver Hartmann's solo band.
+avantasia,timo_tolkki,guest guitarist,Timo Tolkki appeared as guest guitarist on early Avantasia material.
+timo_tolkki,stratovarius,guitarist/songwriter,Timo Tolkki was a central Stratovarius guitarist and songwriter.
+timo_kotipelto,stratovarius,vocalist,Timo Kotipelto fronts Stratovarius.
+avantasia,alice_cooper,guest vocalist,Alice Cooper appeared as a guest vocalist on Avantasia.
+alice_cooper,alice_cooper_band,vocalist,Alice Cooper is associated with the Alice Cooper Band.
+avantasia,deef_snider,guest vocalist,Dee Snider appeared as a guest vocalist on Avantasia.
+deef_snider,twisted_sister,vocalist,Dee Snider fronts Twisted Sister.
+avantasia,lausmann,keyboardist/arranger,Miro is a long-time Avantasia keyboardist arranger and producer collaborator.
+lausmann,miro_project,producer/arranger,Miro's production and arranging work links many European metal productions.
+tobias_sammet,sammet_collab,live project,Tobias Sammet has appeared in Rock Meets Classic contexts.
+helloween,masterplan,member history,Masterplan connects to Helloween through Roland Grapow and Uli Kusch.
+helloween,gamma_ray,member history,Gamma Ray connects to Helloween through Kai Hansen.
+helloween,unisonic,member history,Unisonic reconnects Michael Kiske and Kai Hansen from the Helloween family.
+kiske_somerville,place_vendome,shared vocalist,Both projects are linked through Michael Kiske.
+primal_fear,sinner,related scene,Primal Fear belongs to the German power metal scene linked to Sinner members.

@@ -1,107 +1,74 @@
-id,label,type,description,aliases,source_note
-avantasia,Avantasia,project,"German symphonic/power-metal opera project founded by Tobias Sammet; central hub of this graph.","Tobias Sammet's Avantasia","Central project"
-tobias_sammet,Tobias Sammet,artist,"German vocalist/songwriter; founder of Avantasia and frontman of Edguy.","","Avantasia / Edguy"
-edguy,Edguy,band,"German power-metal band fronted by Tobias Sammet; the direct origin context for Avantasia.","","Tobias Sammet main band"
-jorn_lande,Jørn Lande,artist,"Norwegian hard-rock/heavy-metal vocalist; one of Avantasia's most recurrent guest singers; known for Masterplan, Ark, Beyond Twilight, Jorn and Allen/Lande.","Jorn Lande; Jorn","Avantasia recurring guest"
-masterplan,Masterplan,band,"Power-metal band associated with Jørn Lande and Roland Grapow; major Jørn link into the Helloween/Gamma Ray orbit.","","Jørn affiliation"
-ark,Ark,band,"Progressive metal band fronted by Jørn Lande in an important early-career period.","","Jørn affiliation"
-beyond_twilight,Beyond Twilight,band,"Progressive metal project with Jørn Lande involvement.","","Jørn affiliation"
-vagabond,Vagabond,band,"Norwegian hard-rock band associated with Jørn Lande before his broader international metal career.","","Jørn affiliation"
-the_snakes,The Snakes,band,"Hard-rock project associated with Jørn Lande and ex-Whitesnake material.","","Jørn affiliation"
-jorn_solo,Jorn,band,"Jørn Lande's solo band/project, often stylized JORN.","JORN","Jørn solo project"
-allen_lande,Allen/Lande,project,"Studio collaboration between Russell Allen and Jørn Lande, with major songwriting/production links to Magnus Karlsson and Frontiers-style melodic metal.","Allen - Lande","Jørn/Russell project"
-russell_allen,Russell Allen,artist,"American vocalist of Symphony X; collaborator with Jørn Lande in Allen/Lande and guest in Avantasia.","","Avantasia / Allen-Lande"
-symphony_x,Symphony X,band,"American progressive metal band fronted by Russell Allen.","","Russell Allen main band"
-magnus_karlsson,Magnus Karlsson,artist,"Swedish guitarist/songwriter/producer strongly connected to Allen/Lande and many Frontiers melodic-metal projects.","","Allen/Lande collaborator"
-primal_fear,Primal Fear,band,"German power-metal band linked through Ralf Scheepers and Magnus Karlsson.","","Power metal cross-link"
-ralf_scheepers,Ralf Scheepers,artist,"German vocalist known for Primal Fear and Gamma Ray; guest vocalist in Avantasia.","","Avantasia guest"
-gamma_ray,Gamma Ray,band,"German power-metal band founded by Kai Hansen; linked to Helloween, Ralf Scheepers and the wider Avantasia guest network.","","Power-metal hub"
-kai_hansen,Kai Hansen,artist,"German guitarist/vocalist; Helloween founder and Gamma Ray founder; guest in early Avantasia.","","Avantasia guest"
-helloween,Helloween,band,"German power-metal band; major source of Avantasia-linked musicians including Michael Kiske, Kai Hansen, Markus Grosskopf and Roland Grapow.","","Power-metal hub"
-michael_kiske,Michael Kiske,artist,"German vocalist; ex/current Helloween singer, Unisonic and Place Vendome; one of the defining Avantasia guest voices.","","Avantasia recurring guest"
-unisonic,Unisonic,band,"Melodic power-metal/hard-rock band featuring Michael Kiske and Kai Hansen.","","Kiske/Hansen project"
-place_vendome,Place Vendome,project,"Melodic-rock studio project prominently featuring Michael Kiske.","","Kiske project"
-kiske_somerville,Kiske/Somerville,project,"Melodic metal/rock project pairing Michael Kiske with Amanda Somerville.","","Kiske/Somerville project"
-amanda_somerville,Amanda Somerville,artist,"American singer/songwriter and vocal producer; frequent Avantasia live/backing vocalist and collaborator with Michael Kiske.","","Avantasia collaborator"
-sascha_paeth,Sascha Paeth,artist,"German guitarist/producer; core Avantasia studio/live contributor and producer-guitar hub for many metal-opera projects.","","Avantasia core contributor"
-miro,Miro,artist,"Keyboardist/orchestrator connected with Avantasia's core production team.","Michael Rodenberg","Avantasia core contributor"
-oliver_hartmann,Oliver Hartmann,artist,"German vocalist/guitarist; Avantasia guest and live guitarist, also known from At Vance and Hartmann.","","Avantasia collaborator"
-at_vance,At Vance,band,"German neoclassical/power-metal band associated with Oliver Hartmann.","","Hartmann band"
-hartmann_band,Hartmann,band,"Oliver Hartmann's solo band/project.","","Hartmann project"
-bob_catley,Bob Catley,artist,"British vocalist of Magnum; one of Avantasia's recurring character voices and live guests.","","Avantasia recurring guest"
-magnum,Magnum,band,"British melodic/hard-rock band fronted by Bob Catley.","","Bob Catley band"
-hard_rain,Hard Rain,band,"Project connected to Magnum members including Bob Catley/Tony Clarkin context.","","Bob Catley related"
-ronnie_atkins,Ronnie Atkins,artist,"Danish vocalist; Pretty Maids frontman and recurring Avantasia guest.","","Avantasia recurring guest"
-pretty_maids,Pretty Maids,band,"Danish hard-rock/heavy-metal band fronted by Ronnie Atkins.","","Ronnie Atkins band"
-nordic_union,Nordic Union,project,"Melodic metal project featuring Ronnie Atkins and Erik Mårtensson.","","Ronnie Atkins project"
-eric_martin,Eric Martin,artist,"American vocalist; Mr. Big frontman and recurring Avantasia guest.","","Avantasia recurring guest"
-mr_big,Mr. Big,band,"American hard-rock band fronted by Eric Martin.","","Eric Martin band"
-geoff_tate,Geoff Tate,artist,"American vocalist; classic Queensrÿche singer and recurring Avantasia guest.","","Avantasia recurring guest"
-queensryche,Queensrÿche,band,"American progressive/heavy-metal band historically fronted by Geoff Tate.","Queensryche","Geoff Tate band"
-operation_mindcrime,Operation: Mindcrime,project,"Geoff Tate project named after the Queensrÿche concept-album era.","","Geoff Tate project"
-roy_khan,Roy Khan,artist,"Norwegian vocalist known for Kamelot and Conception; guest on Avantasia's Here Be Dragons era.","Khan","Avantasia guest"
-kamelot,Kamelot,band,"American symphonic/power-metal band associated with Roy Khan and Tommy Karevik.","","Khan/Karevik band"
-conception,Conception,band,"Norwegian progressive metal band fronted by Roy Khan.","","Roy Khan band"
-tommy_karevik,Tommy Karevik,artist,"Swedish vocalist known for Kamelot and Seventh Wonder; Avantasia guest in the Here Be Dragons era.","","Avantasia guest"
-seventh_wonder,Seventh Wonder,band,"Swedish progressive metal band featuring Tommy Karevik.","","Tommy Karevik band"
-kenny_leckremo,Kenny Leckremo,artist,"Swedish vocalist known for H.E.A.T; Avantasia guest in the Here Be Dragons era.","","Avantasia guest"
-heat,H.E.A.T,band,"Swedish melodic hard-rock band associated with Kenny Leckremo and Erik Grönwall.","HEAT","Kenny Leckremo band"
-adrienne_cowan,Adrienne Cowan,artist,"American vocalist known for Seven Spires; Avantasia guest/live vocalist in the Here Be Dragons era.","","Avantasia guest"
-seven_spires,Seven Spires,band,"American symphonic metal band fronted by Adrienne Cowan.","","Adrienne Cowan band"
-herbie_langhans,Herbie Langhans,artist,"German vocalist; Avantasia live/backing vocalist and member of several power-metal projects.","","Avantasia collaborator"
-firewind,Firewind,band,"Greek power-metal band; later associated with Herbie Langhans.","","Herbie link"
-sinbreed,Sinbreed,band,"German power-metal band associated with Herbie Langhans.","","Herbie link"
-floor_jansen,Floor Jansen,artist,"Dutch vocalist known for Nightwish, After Forever and ReVamp; guest on Avantasia's Moonflower Society era.","","Avantasia guest"
-nightwish,Nightwish,band,"Finnish symphonic metal band fronted by Floor Jansen in the modern era.","","Floor Jansen band"
-after_forever,After Forever,band,"Dutch symphonic metal band formerly fronted by Floor Jansen.","","Floor Jansen band"
-revamp,ReVamp,band,"Dutch metal band founded/fronted by Floor Jansen.","","Floor Jansen band"
-hansi_kursch,Hansi Kürsch,artist,"German vocalist/bassist known for Blind Guardian; guest on Avantasia's Moonglow era.","Hansi Kursch","Avantasia guest"
-blind_guardian,Blind Guardian,band,"German power/speed-metal band fronted by Hansi Kürsch.","","Hansi band"
-demons_wizards,Demons & Wizards,project,"Power-metal side project connecting Hansi Kürsch and Jon Schaffer.","Demons and Wizards","Hansi project"
-sharon_den_adel,Sharon den Adel,artist,"Dutch vocalist of Within Temptation; guest in Avantasia.","","Avantasia guest"
-within_temptation,Within Temptation,band,"Dutch symphonic metal band fronted by Sharon den Adel.","","Sharon band"
-marko_hietala,Marko Hietala,artist,"Finnish vocalist/bassist known for Nightwish and Tarot; guest in Avantasia.","Marco Hietala","Avantasia guest"
-tarot,Tarot,band,"Finnish heavy-metal band associated with Marko Hietala.","","Marko band"
-nightwish_marko, Nightwish connection,project,"Bridge node for artists sharing the Nightwish orbit: Floor Jansen and Marko Hietala.","","Bridge"
-andre_matos,Andre Matos,artist,"Brazilian vocalist known from Angra, Shaman and Viper; early Avantasia guest.","André Matos","Avantasia guest"
-angra,Angra,band,"Brazilian power/progressive metal band formerly fronted by Andre Matos.","","Andre Matos band"
-shaman,Shaman,band,"Brazilian power/progressive metal band associated with Andre Matos.","Shaaman","Andre Matos band"
-viper,Viper,band,"Brazilian heavy/power-metal band associated with Andre Matos.","","Andre Matos band"
-rob_rock,Rob Rock,artist,"American power-metal vocalist; early Avantasia guest.","","Avantasia guest"
-impellitteri,Impellitteri,band,"American heavy/power-metal band fronted by Rob Rock in major periods.","","Rob Rock band"
-axel_rudi_pell,Axel Rudi Pell,band,"German hard-rock/heavy-metal band/project linked with several melodic metal vocalists including Rob Rock context.","","Rob Rock related"
-david_defeis,David DeFeis,artist,"American vocalist/keyboardist; Virgin Steele frontman and early Avantasia guest.","David Defeis","Avantasia guest"
-virgin_steele,Virgin Steele,band,"American heavy/power-metal band fronted by David DeFeis.","","David DeFeis band"
-alice_cooper,Alice Cooper,artist,"American rock singer; guest on Avantasia's The Scarecrow era.","","Avantasia guest"
-alice_cooper_band,Alice Cooper Band,band,"Historic band/brand around Alice Cooper.","","Alice Cooper project"
-klaus_meine,Klaus Meine,artist,"German vocalist of Scorpions; guest in Avantasia.","","Avantasia guest"
-scorpions,Scorpions,band,"German hard-rock/heavy-metal band fronted by Klaus Meine.","","Klaus Meine band"
-rudolf_schenker,Rudolf Schenker,artist,"German guitarist/founder of Scorpions; guest musician in Avantasia.","","Avantasia guest musician"
-dee_snider,Dee Snider,artist,"American vocalist of Twisted Sister; guest in Avantasia.","","Avantasia guest"
-twisted_sister,Twisted Sister,band,"American heavy metal/hard rock band fronted by Dee Snider.","","Dee Snider band"
-jon_oliva,Jon Oliva,artist,"American vocalist/composer known for Savatage and Trans-Siberian Orchestra; guest in Avantasia.","","Avantasia guest"
-savatage,Savatage,band,"American heavy/progressive metal band associated with Jon Oliva.","","Jon Oliva band"
-trans_siberian_orchestra,Trans-Siberian Orchestra,project,"Symphonic rock/metal project with Savatage roots; connected through Jon Oliva and related circles.","TSO","Jon Oliva related"
-biff_byford,Biff Byford,artist,"British vocalist of Saxon; guest in Avantasia.","","Avantasia guest"
-saxon,Saxon,band,"British heavy metal band fronted by Biff Byford.","","Biff Byford band"
-joe_lynn_turner,Joe Lynn Turner,artist,"American rock vocalist known for Rainbow, Deep Purple and Yngwie Malmsteen collaborations; guest in Avantasia.","","Avantasia guest"
-rainbow,Rainbow,band,"Hard-rock band founded by Ritchie Blackmore; associated with Joe Lynn Turner among other singers.","","Joe Lynn Turner band"
-deep_purple,Deep Purple,band,"British hard-rock band; Joe Lynn Turner was a vocalist in one era.","","Joe Lynn Turner link"
-yngwie_malmsteen,Yngwie Malmsteen,artist,"Swedish guitarist/bandleader; worked with Joe Lynn Turner and other melodic metal singers.","","Joe Lynn Turner link"
-tim_ripper_owens,Tim 'Ripper' Owens,artist,"American metal vocalist known for Judas Priest and Iced Earth; guest in Avantasia.","Tim Ripper Owens","Avantasia guest"
-judas_priest,Judas Priest,band,"British heavy metal band; Tim 'Ripper' Owens was vocalist in the late 1990s/early 2000s.","","Ripper Owens band"
-iced_earth,Iced Earth,band,"American power/thrash metal band associated with Tim 'Ripper' Owens.","","Ripper Owens band"
-bruce_kulick,Bruce Kulick,artist,"American guitarist known for KISS and Grand Funk Railroad; guest guitarist in Avantasia.","","Avantasia guest musician"
-kiss,KISS,band,"American hard-rock band associated with Bruce Kulick.","Kiss","Bruce Kulick band"
-grand_funk,Grand Funk Railroad,band,"American rock band associated with Bruce Kulick.","Grand Funk Railroad","Bruce Kulick band"
-eric_singer,Eric Singer,artist,"American drummer known for KISS, Alice Cooper and Avantasia guest appearances.","","Avantasia guest musician"
-timo_tolkki,Timo Tolkki,artist,"Finnish guitarist/composer known for Stratovarius; guest in Avantasia.","","Avantasia guest"
-stratovarius,Stratovarius,band,"Finnish power-metal band strongly associated with Timo Tolkki and Jens Johansson.","","Tolkki/Johansson band"
-jens_johansson,Jens Johansson,artist,"Swedish keyboardist known for Stratovarius and Yngwie Malmsteen; guest in Avantasia.","","Avantasia guest musician"
-arjen_lucassen,Arjen Anthony Lucassen,artist,"Dutch multi-instrumentalist/composer behind Ayreon; guest musician in Avantasia.","Arjen Lucassen","Avantasia guest / Ayreon hub"
-ayreon,Ayreon,project,"Dutch progressive metal/rock opera project by Arjen Lucassen; overlaps with Avantasia through Jørn Lande, Floor Jansen, Hansi Kürsch and other singers.","","Major metal-opera hub"
-star_one,Star One,project,"Arjen Lucassen project connected to the Ayreon orbit.","","Arjen project"
-mille_petrozza,Mille Petrozza,artist,"German vocalist/guitarist of Kreator; guest in Avantasia's Moonglow era.","","Avantasia guest"
-kreator,Kreator,band,"German thrash-metal band fronted by Mille Petrozza.","","Mille Petrozza band"
-candice_night,Candice Night,artist,"American vocalist/lyricist of Blackmore's Night; guest in Avantasia's Moonglow era.","","Avantasia guest"
-blackmores_night,Blackmore's Night,band,"Folk rock project led by Ritchie Blackmore and Candice Night.","Blackmores Night","Candice Night band"
+id,label,type,description
+avantasia,Avantasia,project,Metal opera project founded by Tobias Sammet. Central node connecting guest singers musicians and related bands.
+tobias_sammet,Tobias Sammet,artist,Founder composer and vocalist of Avantasia and Edguy.
+edguy,Edguy,band,German power metal band fronted by Tobias Sammet.
+jorn_lande,Jørn Lande,artist,Norwegian hard rock and metal vocalist known for Masterplan Jorn Ark Allen/Lande and Avantasia appearances.
+masterplan,Masterplan,band,Power metal band co-founded by Roland Grapow and Uli Kusch. Jørn Lande was a major vocalist.
+jorn_band,Jorn,band,Solo band and project of Jørn Lande.
+ark,Ark,band,Progressive metal band featuring Jørn Lande.
+vagabond,Vagabond,band,Norwegian hard rock band associated with Jørn Lande.
+beyond_twilight,Beyond Twilight,band,Progressive metal project associated with Jørn Lande.
+allen_lande,Allen/Lande,project,Melodic metal collaboration between Russell Allen and Jørn Lande with songs by Magnus Karlsson.
+russell_allen,Russell Allen,artist,American vocalist of Symphony X and Allen/Lande.
+symphony_x,Symphony X,band,American progressive metal band fronted by Russell Allen.
+magnus_karlsson,Magnus Karlsson,artist,Swedish guitarist songwriter and producer known for Primal Fear Starbreaker Free Fall and Allen/Lande writing.
+primal_fear,Primal Fear,band,German power metal band with Magnus Karlsson as guitarist.
+starbreaker,Starbreaker,band,Melodic hard rock project with Tony Harnell and Magnus Karlsson.
+michael_kiske,Michael Kiske,artist,German vocalist known for Helloween Unisonic Place Vendome and Avantasia.
+helloween,Helloween,band,German power metal band linked to Michael Kiske Kai Hansen Roland Grapow and Uli Kusch.
+unisonic,Unisonic,band,Power metal project with Michael Kiske and Kai Hansen.
+place_vendome,Place Vendome,project,Melodic rock project featuring Michael Kiske.
+kai_hansen,Kai Hansen,artist,German guitarist vocalist and songwriter linked to Helloween Gamma Ray Unisonic and Avantasia.
+gamma_ray,Gamma Ray,band,German power metal band founded by Kai Hansen.
+bob_catley,Bob Catley,artist,British vocalist known for Magnum and frequent Avantasia appearances.
+magnum,Magnum,band,British melodic rock band fronted by Bob Catley.
+hard_rain,Hard Rain,band,Project connected to Magnum members including Bob Catley.
+eric_martin,Eric Martin,artist,American rock vocalist best known as the singer of Mr. Big and Avantasia guest.
+mr_big,Mr. Big,band,American hard rock band fronted by Eric Martin.
+geoff_tate,Geoff Tate,artist,American vocalist best known for Queensrÿche and Avantasia guest appearances.
+queensryche,Queensrÿche,band,American progressive metal band formerly fronted by Geoff Tate.
+ronnie_atkins,Ronnie Atkins,artist,Danish vocalist known for Pretty Maids Nordic Union and Avantasia.
+pretty_maids,Pretty Maids,band,Danish hard rock and heavy metal band fronted by Ronnie Atkins.
+nordic_union,Nordic Union,project,Melodic rock project with Ronnie Atkins and Erik Martensson.
+erik_martensson,Erik Mårtensson,artist,Swedish vocalist guitarist producer linked to Eclipse W.E.T. and Nordic Union.
+eclipse,Eclipse,band,Swedish hard rock band fronted by Erik Mårtensson.
+wet,W.E.T.,project,Melodic rock supergroup with Jeff Scott Soto Erik Mårtensson and Robert Säll.
+jeff_scott_soto,Jeff Scott Soto,artist,American vocalist linked to Talisman W.E.T. Sons of Apollo and Avantasia.
+talisman,Talisman,band,Swedish melodic hard rock band fronted by Jeff Scott Soto.
+sons_of_apollo,Sons of Apollo,band,Progressive metal supergroup featuring Jeff Scott Soto.
+tommy_karevik,Tommy Karevik,artist,Swedish vocalist known for Kamelot Seventh Wonder and Avantasia.
+kamelot,Kamelot,band,Symphonic power metal band fronted by Tommy Karevik after Roy Khan.
+seventh_wonder,Seventh Wonder,band,Swedish progressive metal band fronted by Tommy Karevik.
+roy_khan,Roy Khan,artist,Norwegian vocalist known for Kamelot Conception and Avantasia.
+conception,Conception,band,Norwegian progressive metal band fronted by Roy Khan.
+adrienne_cowan,Adrienne Cowan,artist,American vocalist known for Seven Spires Avantasia and guest work with metal projects.
+seven_spires,Seven Spires,band,American symphonic metal band fronted by Adrienne Cowan.
+sascha_paeth,Sascha Paeth,artist,German producer guitarist and songwriter linked to Avantasia Heavens Gate and numerous metal productions.
+heavens_gate,Heavens Gate,band,German power metal band linked to Sascha Paeth.
+masters_of_ceremony,Masters of Ceremony,project,Sascha Paeth's Masters of Ceremony is a metal project led by Sascha Paeth.
+amanda_somerville,Amanda Somerville,artist,American vocalist songwriter and vocal coach linked to Avantasia Aina Trillium and Kiske/Somerville.
+trillium,Trillium,project,Metal project fronted by Amanda Somerville.
+kiske_somerville,Kiske/Somerville,project,Melodic rock metal project featuring Michael Kiske and Amanda Somerville.
+aina,Aina,project,Metal opera project Days of Rising Doom with several Avantasia-adjacent musicians.
+floor_jansen,Floor Jansen,artist,Dutch vocalist known for Nightwish After Forever ReVamp and Avantasia.
+nightwish,Nightwish,band,Finnish symphonic metal band fronted by Floor Jansen.
+after_forever,After Forever,band,Dutch symphonic metal band formerly fronted by Floor Jansen.
+revamp,ReVamp,band,Dutch metal band founded by Floor Jansen.
+herbie_langhans,Herbie Langhans,artist,German vocalist linked to Avantasia Firewind Sinbreed Radiant and Seventh Avenue.
+firewind,Firewind,band,Greek power metal band that included Herbie Langhans as vocalist.
+sinbreed,Sinbreed,band,German power metal band associated with Herbie Langhans.
+radiant,Radiant,band,Melodic hard rock band featuring Herbie Langhans.
+seventh_avenue,Seventh Avenue,band,German power metal band formerly featuring Herbie Langhans.
+oliver_hartmann,Oliver Hartmann,artist,German vocalist guitarist linked to At Vance Hartmann and Avantasia.
+at_vance,At Vance,band,Power metal band formerly fronted by Oliver Hartmann.
+hartmann,Hartmann,band,Solo band project of Oliver Hartmann.
+timo_tolkki,Timo Tolkki,artist,Finnish guitarist songwriter and producer known for Stratovarius and guest work.
+stratovarius,Stratovarius,band,Finnish power metal band strongly associated with Timo Tolkki and Timo Kotipelto.
+timo_kotipelto,Timo Kotipelto,artist,Finnish vocalist of Stratovarius and guest vocalist in metal projects.
+sammet_collab,Rock Meets Classic,project,Live rock orchestral project with multiple hard rock and metal singers including Tobias Sammet appearances.
+alice_cooper,Alice Cooper,artist,American shock rock singer who guested on Avantasia.
+alice_cooper_band,Alice Cooper Band,band,Rock band associated with Alice Cooper's early career.
+deef_snider,Dee Snider,artist,American vocalist known for Twisted Sister and Avantasia guest appearance.
+twisted_sister,Twisted Sister,band,American heavy metal band fronted by Dee Snider.
+lausmann,Miro,artist,Keyboardist arranger and producer Michael Rodenberg known as Miro, long associated with Avantasia.
+miro_project,Miro production,project,Production and arranging work by Michael Rodenberg in European metal projects.

@@ -1,8 +1,10 @@
 # Avantasia Collaboration Network
 
-A flat, GitHub-ready Streamlit app for exploring the Avantasia collaboration universe.
+A flat-file Streamlit app for an interactive Avantasia collaboration network.
 
-No folders are required. Keep all files in the repository root:
+## Files
+
+Keep all files in the same repository folder:
 
 ```text
 app.py
@@ -11,6 +13,8 @@ edges.csv
 requirements.txt
 README.md
 ```
+
+No `data/` folder is required.
 
 ## Run locally
 
@@ -21,26 +25,13 @@ streamlit run app.py
 
 ## Deploy on Streamlit Cloud
 
-1. Upload these files to the root of a GitHub repository.
-2. In Streamlit Cloud, choose `app.py` as the entry point.
-3. Do not put `nodes.csv` or `edges.csv` into a `data/` folder unless you also change the paths in `app.py`.
+1. Push all root files to GitHub.
+2. Create a Streamlit Cloud app.
+3. Set main file to `app.py`.
 
 ## Editing the graph
 
-- Add artists, bands and projects to `nodes.csv`.
-- Add relationships to `edges.csv`.
-- The app validates missing IDs and reports broken edges in the sidebar.
+Add people, bands and projects to `nodes.csv`.
+Add links to `edges.csv`.
 
-## Data model
-
-`nodes.csv` columns:
-
-```csv
-id,label,type,description,aliases,source_note
-```
-
-`edges.csv` columns:
-
-```csv
-source,target,relation,description,weight
-```
+Important: keep descriptions as plain text. Do not paste HTML tags such as `<div>` or `<br>` into the CSV.
